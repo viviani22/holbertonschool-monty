@@ -12,7 +12,7 @@ void Push(stack_t **stack, unsigned int num_line, char *n)
 
 	if (n == NULL)
 	{
-		printf("L%d: usage: push integer\n", num_line);
+		fprintf("L%d: usage: push integer\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; n[i] != '\0'; i++)
@@ -28,7 +28,7 @@ void Push(stack_t **stack, unsigned int num_line, char *n)
 	pushed = malloc(sizeof(stack_t));
 	if (pushed == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	pushed->n = atoi(n);
