@@ -28,7 +28,7 @@ void Pint(stack_t **stack, unsigned int num_line)
 	if (*stack == NULL)
 	{
 		printf("L%d: can't pint, stack empty\n", num_line);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	operator = (*stack)->n;
 	printf("%d\n", operator);
@@ -45,7 +45,7 @@ void Pop(stack_t **stack, unsigned int num_line)
 	if (*stack == NULL)
 	{
 		printf("L%d: can't pop an empty stack\n", num_line);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	poped = (*stack)->next;
 	free(*stack);
@@ -63,7 +63,7 @@ void Swap(stack_t **stack, unsigned int num_line)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		printf("L%d: can't pop an empty stack", num_line);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	temp1 = (*stack)->n;
 	temp2 = (*stack)->next->n;
@@ -82,7 +82,7 @@ void Add(stack_t **stack, unsigned int num_line)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		printf("L%d: can't add, stack too short\n", num_line);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->n;
 	b = (*stack)->next->n;
