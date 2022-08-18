@@ -62,7 +62,7 @@ void Swap(stack_t **stack, unsigned int num_line)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack", num_line);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	temp1 = (*stack)->n;
