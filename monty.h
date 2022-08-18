@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,9 +19,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -32,7 +33,21 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+int opcode_function(char *token, stack_t **top, unsigned int num_line);
+void Push(stack_t **stack, unsigned int num_line, char *n);
+void Pall(stack_t **stack, unsigned int num_line);
+void Pint(stack_t **stack, unsigned int num_line);
+void Pop(stack_t **stack, unsigned int num_line);
+void Swap(stack_t **stack, unsigned int num_line);
+void Add(stack_t **stack, unsigned int num_line);
+void Nop(stack_t **stack, unsigned int num_line);
+void open_and_read(char **argv);
+int found_number(char *token);
+int found_comment(char *token, int counter);
+void free_stack(stack_t **top);
+int number;
 #endif
