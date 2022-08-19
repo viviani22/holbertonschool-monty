@@ -1,5 +1,4 @@
-# holbertonschool-monty
-C - Foundations part 2
+# C - Stacks, Queues - LIFO, FIFO
 
 - [bytecodes](https://github.com/viviani22/holbertonschool-monty/blob/main/bytecodes) Directory containing monty files (.m) where the following program reads commands from.
 - [monty.h](https://github.com/viviani22/holbertonschool-monty/blob/main/monty.h) Header file. Prototype and stack structure.
