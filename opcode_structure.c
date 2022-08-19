@@ -17,6 +17,12 @@ int opcode_function(char *token, stack_t **top, unsigned int num_line)
 		{"swap", Swap},
 		{"nop", Nop},
 		{"add", Add},
+		{"sub", Sub},
+		{"div", Div},
+		{"mul", Mul},
+		{"mod", Mod},
+		{"pchar", Pchar},
+		{"pstr", Pstr},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode != NULL; i++)
