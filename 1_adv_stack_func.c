@@ -10,7 +10,7 @@ void Sub(stack_t **stack, unsigned int num_line)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short", num_line);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->n;
@@ -30,10 +30,15 @@ void Div(stack_t **stack, unsigned int num_line)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short", num_line);
+		fprintf(stderr, "L%u: can't div, stack too short\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->n;
+	if (a == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", num_line);
+		exit(EXIT_FAILURE);
+	}
 	b = (*stack)->next->n;
 	div = a / b;
 	Pop(stack, num_line);
@@ -50,7 +55,7 @@ void Mul(stack_t **stack, unsigned int num_line)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short", num_line);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->n;
@@ -70,10 +75,15 @@ void Mod(stack_t **stack, unsigned int num_line)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short", num_line);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->n;
+	if (a == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", num_line);
+		exit(EXIT_FAILURE);
+	}
 	b = (*stack)->next->n;
 	mod = b % a;
 	Pop(stack, num_line);
